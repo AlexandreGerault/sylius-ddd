@@ -23,11 +23,11 @@ return static function (ContainerConfigurator $containerConfigurator): void {
     $services->instanceof(AbstractResourceType::class)
         ->autowire(false);
 
-    $services->load('App\\Shared\\', dirname(__DIR__, 1).'/src/Shared')
+    $services->load('App\\Shared\\', dirname(__DIR__, 2).'/src/Shared')
         ->exclude([
-            dirname(__DIR__, 1).'/src/Shared/Infrastructure/Entity',
-            dirname(__DIR__, 1).'/src/Shared/Infrastructure/Migrations',
-            dirname(__DIR__, 1).'/src/Shared/Infrastructure/Symfony/Kernel.php',
+            dirname(__DIR__, 2).'/src/Shared/Infrastructure/Entity',
+            dirname(__DIR__, 2).'/src/Shared/Infrastructure/Migrations',
+            dirname(__DIR__, 2).'/src/Shared/Infrastructure/Symfony/Kernel.php',
         ]);
     /**
      * TODO: Remove as controllers should be defined in domains
